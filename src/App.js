@@ -1,4 +1,4 @@
-
+import { useGlobalContext } from './context';
 // CSS 
 import './App.css';
 // COMPONENTS 
@@ -8,12 +8,15 @@ import Modals from './components/Modals';
 import Search from './components/Search';
 
 function App() {
+
+  const {showModal} = useGlobalContext()
+
   return (
     <main>
       <Search/>
       {/* <Favorites/>  */}
       <Meals/>
-      {/* <Modals/> */}
+      {showModal && <Modals/>}
       
     </main>
   );
